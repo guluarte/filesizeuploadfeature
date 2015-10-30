@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "FileApi";
+}
+
+<h2>FileApi</h2>
+
+<div id="file-upload">
+    @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new {enctype = "multipart/form-data"}))
+    {
+        <div class="btn btn-success btn-small js-fileapi-wrapper">
+            <span>Browse</span>
+            <input type="file" name="file">
+        </div>
+        <span class="js-info">
+            <span class="js-name b-upload__name"></span>
+            <span class="b-upload__size">(<span class="js-size"></span>)</span>
+           
+        </span>
+        <span id="upload-errors"></span>
+        <hr>
+        <button class="js-send btn-small btn btn-primary" type="submit">Send</button>
+        <button class="js-reset btn-small btn btn-warning" type="reset">reset</button>
+    }
+</div>
+
+@section Scripts {
+   @Scripts.Render("~/bundles/fileapi-js")
+}

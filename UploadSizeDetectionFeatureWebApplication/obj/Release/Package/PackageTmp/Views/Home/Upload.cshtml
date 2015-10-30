@@ -1,0 +1,31 @@
+﻿@model UploadSizeDetectionFeatureWebApplication.Models.FileUpload
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+<div>
+    <h4>File Upload Details</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FileName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FileName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FileContentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FileContentType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back", "Index")
+</p>
