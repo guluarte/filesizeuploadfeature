@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Upload Size Feature";
+}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Default upload, Fallbacks HTML5 > Flash > Silverlight > HTML4</h2>
+
+        <!-- start -->
+        @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div id="uploader">
+                <p>Your browser doesn't have Flash, Silverlight or HTML5 support.</p>
+                <input type="submit" name="Submit" value="Submit" />
+            </div>
+
+            <h3>Flash runtime</h3>
+            <div id="flash_uploader">Your browser doesn't have Flash installed.</div>
+
+            <h3>Silverlight runtime</h3>
+            <div id="silverlight_uploader">Your browser doesn't have Silverlight installed.</div>
+
+            <h3>HTML 4 runtime</h3>
+            <div id="html4_uploader">Your browser doesn't have HTML 4 support.</div>
+
+            <h3>HTML 5 runtime</h3>
+            <div id="html5_uploader">Your browser doesn't support native upload.</div>
+        }
+        <!-- end -->
+    </div>
+
+</div>
