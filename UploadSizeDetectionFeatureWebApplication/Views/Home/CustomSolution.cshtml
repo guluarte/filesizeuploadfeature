@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Custom Solution";
 }
 
@@ -7,17 +6,28 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h2>Default upload, Fallbacks HTML5 > Flash > Silverlight > HTML4</h2>
+        <h2>Default upload, Fallbacks HTML5 > ActiveX</h2>
 
         <!-- start -->
         @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            <div id="test">
-                
-                <input type="submit" name="Submit" value="Submit" />
+            <div class="">
+                <span>Browse</span>
+                <input type="file" name="file" id="file">
+                <input type="submit" name="Submit" value="Submit" id="submit" />
             </div>
+
         }
         <!-- end -->
     </div>
 
 </div>
+
+<div class="row">
+    <div class="col-md-12">
+        <pre id="result"></pre>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/custom-js")
+}

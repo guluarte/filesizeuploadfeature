@@ -178,6 +178,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\FileSizeDetection - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\FileSizeDetection - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\fileApiCustom.js" />
@@ -263,6 +265,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\ModernizrFileApi\FileApiHelper.js" />
+    <Content Include="Scripts\ModernizrFileApi\jquery.uploadify.js" />
+    <Content Include="Scripts\ModernizrFileApi\jquery.uploadify.min.js" />
+    <Content Include="Scripts\ModernizrFileApi\uploadify.swf" />
     <Content Include="Scripts\moxie.js" />
     <Content Include="Scripts\moxie.min.js" />
     <Content Include="Scripts\Moxie.swf" />

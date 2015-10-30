@@ -27,8 +27,8 @@ namespace UploadSizeDetectionFeatureWebApplication
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-             
-            /* Plupload: http://www.plupload.com/*/ 
+
+            /* Plupload: http://www.plupload.com/*/
 
             bundles.Add(new ScriptBundle("~/bundles/plupload-js").Include(
                       "~/Scripts/plupload.full.min.js",
@@ -66,7 +66,9 @@ namespace UploadSizeDetectionFeatureWebApplication
                       ));
 
             /* Modernizr and ActiveX */
-
+            bundles.Add(new ScriptBundle("~/bundles/custom-js").Include(
+                      "~/Scripts/ModernizrFileApi/FileApiHelper.js"
+          ));
 
         }
     }

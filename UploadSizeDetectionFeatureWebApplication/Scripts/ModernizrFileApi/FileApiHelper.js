@@ -3,14 +3,21 @@
 
 $(function () {
 
+    var Mb = 1048576;
+    var maxFileSize = Mb * 1;
+
+    var fileInputId = "file";
+
     var detectFileSize = function (elementId) {
 
         var element = document.getElementById(elementId);
 
-        if (Modernizr.filereader) {
+        // If supported use the HTML5 API
+        if (window.FileReader || "FileReader" in window || typeof FileReader !== "undefined") {
             return element.files[0].size;
         }
 
+        // Fallback to ActiveX
         if (window.ActiveXObject) {
 
             var fso = new ActiveXObject("Scripting.FileSystemObject");
@@ -19,14 +26,27 @@ $(function () {
             return thefile.size;
         }
 
-        // Fallback to Flash
-
+        return -1;
 
     };
 
-    $('#file-upload').bind('change', function () {
+    var bytesToMegabytes = function(bytes) {
+        return bytes / Mb;
+    }
 
-        console.log(detectFileSize("file-upload"));
+    $("#" + fileInputId).bind("change", function () {
+
+        console.log(detectFileSize(fileInputId));
+
+        var uploadFileSize = detectFileSize(fileInputId);
+
+        if (uploadFileSize > maxFileSize) {
+            $("#result").html("The file is too big: " + bytesToMegabytes(uploadFileSize) + " Mb");
+            $("#submit").attr('disabled', 'disabled');
+        } else {
+            $("#result").html("OK: " + bytesToMegabytes(uploadFileSize) + " Mb");
+            $("#submit").removeAttr('disabled');
+        }
 
     });
 });
